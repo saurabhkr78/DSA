@@ -1,40 +1,29 @@
 #include <iostream>
 #include <stack>
-#include <vector> // Included for using vector
+#include <vector>
 using namespace std;
 
-stack<int> st;
-
 int main() {
-    int arr[] = {4, 1, 2, 5, 4, 3, 4, 8, 2, 7};
+    int arr[] = {3, 10, 4, 2, 1, 2, 6, 1, 7, 2, 9};
     int size = sizeof(arr) / sizeof(arr[0]);
-    
-    // Initialize the answer array with zeros
-    vector<int> ans(size, 0);
-    
-    // Push the first element onto the stack to avoid empty stack issues
-    st.push(arr[0]);
-    
-    for (int i = 1; i < size; i++) {
-        if (!st.empty() && st.top() >= arr[i]) {
-            
-            if (!st.empty()) {
-                ans[i] = st.top();
-            }
-            st.pop();
-            st.push(arr[i]);
-        } 
-        
-        else {
-            st.push(arr[i]);
+    vector<int> ans(size, -1); // Initialize ans with -1 indicating no next greater element found
+
+    stack<int> st; // Stack to keep track of indices
+
+    for (int i = 0; i < size; i++) {
+        // While stack is not empty and the current element is greater than the element at the index stored in st.top()
+        while (!st.empty() && arr[st.top()] < arr[i]) {
+            ans[st.top()] = arr[i]; // Update ans for the index where we found the next greater element
+            st.pop(); // Pop the element from stack
         }
+        st.push(i); // Push the current index onto the stack
     }
-    
+
     // Print the ans array
     for (int i = 0; i < size; i++) {
         cout << ans[i] << " ";
     }
     cout << endl;
-    
+
     return 0;
 }
