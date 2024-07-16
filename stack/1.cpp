@@ -1,11 +1,15 @@
 #include <iostream>
 #include<stack>
+#define MAX_SIZE 7
 using namespace std;
 
 int main(){
 
     stack<int>st;
+    if(st.size()==0) cout<<"stack is empty"<<endl;
+    
     cout<<st.size()<<endl;
+    
     st.push(10);
     st.push(20);
     st.push(30);
@@ -13,6 +17,8 @@ int main(){
     st.push(50);
     st.push(60);
     cout<<st.size()<<endl;
+    if(st.size()<=MAX_SIZE)cout<<"stack is not full"<<endl;
+    else cout<<"stack is full"<<endl;
     st.pop();
     cout<<st.size()<<endl;
     cout<<st.top()<<endl;
