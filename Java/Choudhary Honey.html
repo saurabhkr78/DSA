@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B6IX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f2;
+        }
+
+        header {
+            background-color: #131921;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            max-width: 300px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-image {
+            max-width: 100%;
+        }
+
+        .product-title {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product-price {
+            font-size: 16px;
+            color: #b12704;
+        }
+
+        .product-button {
+            background-color: #f0c14b;
+            border: none;
+            color: black;
+            padding: 10px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Amazon</h1>
+    </header>
+
+    <div class="product-container">
+        <div class="product-card">
+            <img class="product-image" src="product1.jpg" alt="Product 1">
+            <h2 class="product-title">Product 1</h2>
+            <p class="product-price">$20</p>
+            <button class="product-button">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img class="product-image" src="product2.jpg" alt="Product 2">
+            <h2 class="product-title">Product 2</h2>
+            <p class="product-price">$30</p>
+            <button class="product-button">Add to Cart</button>
+        </div>
+
+        <!-- Add more product cards here -->
+    </div>
+
+    <script>
+        // You can add JavaScript functionality here, such as handling user interactions or cart functionality.
+    </script>
+</body>
+</html>
