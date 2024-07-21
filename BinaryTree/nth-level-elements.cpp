@@ -47,7 +47,10 @@ void postorder(node* root){
 }
 void nthlevel(node* root,int currentLevel,int level){
     if(root==NULL) return;
-    if(currentLevel==level) cout<<root->val<<" ";
+    if(currentLevel==level){ 
+        cout<<root->val<<" ";
+        return;
+    }
         
         nthlevel(root->left,currentLevel+1,level);
         nthlevel(root->right,currentLevel+1,level);
