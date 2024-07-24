@@ -4,7 +4,8 @@
     "ostream": "cpp",
     "random": "cpp",
     "new": "cpp",
-    "queue": "cpp"
+    "queue": "cpp",
+    "vector": "cpp"
   },
   "C_Cpp.errorSquiggles": "enabled"
 }
