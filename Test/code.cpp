@@ -53,6 +53,81 @@ class ll{
             size++;
         }
     }
+    //delete
+    void deleteAtEnd(){
+        if(size==0){
+            cout<<"List is Empty"<<endl; return;
+        } 
+        else if(size==1){
+            head=tail=NULL;
+            size--;
+            return;
+        }
+        else {
+            node* temp=head;
+            while(temp->next!=tail){
+                temp=temp->next;
+            }
+            delete tail;
+            tail=temp;
+            tail->next=NULL;
+            size--;
+        }
+    }
+void deleteAtBeginning(){
+        if(size==0) cout<<"List is empty"<<endl;
+        else if(size==1){
+            head=tail=NULL;
+            size--;
+    }
+    else{
+        head=head->next;
+        size--;
+    }
+}
+void deleteAtIdx(int idx){
+    if(idx==0||idx>size) {
+        cout<<"Invalid Index"<<endl;return;
+    }
+    else if(idx==0) return deleteAtBeginning();
+    else if(idx==size) return deleteAtEnd();
+    else{
+        node* temp=head;
+        for(int i=1;i<idx-1;i++){
+            temp->next=temp->next->next;
+            size--;
+        }
+    }
+
+}
+int  getIndexVal(int idx){
+    if(idx==0|| idx>=size){
+        cout<<"Invalid Index"<<endl;
+        return -1;
+    }
+    else if(idx==0) return head->val;
+    else if(idx==size-1) return tail->val;
+    else{
+        node* temp=head;
+        for(int i=1;i<size;i++){
+        temp=temp->next;
+    }
+    return temp->val;
+}
+
+//display
+void display(){
+if head==NULL return;
+else{
+while(temp!=NULL){
+node* temp=head;
+cout<<temp->val<<" ";
+temp=temp->next
+}
+cout<<endl;
+}
+}
+
 };
 
 int main(){
