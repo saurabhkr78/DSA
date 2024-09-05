@@ -1,0 +1,15 @@
+#To identify recursion problem
+1.tree DS
+2.choice+decision
+3.recursively defined(like result is dependent on previous call)
+
+#two method to solve recursion
+1.recursive tree
+2.IBH
+
+#IBH
+1.1 design hypothesis
+1.2 smaller input hypothesis design
+2.Base condition
+3.induction(mathematics)
+4.final answer
