@@ -1,4 +1,4 @@
-// no comparison based algo
+// not a  comparison based algo
 //given n input size(defined input set) and range k is defined
 //not an inplace algo we make a new array of one xtra size(max element in array+1) to work upon.
 // traverse and check occurence of each element and update their count in array at their index in new array
