@@ -1,0 +1,16 @@
+fixed window
+-max /min sub array of size k
+-first -ve in every window size of k
+-count occurence of anagram
+-max of all sub array of size k
+-max of min of for every window size
+varible window
+-largest and smallest subarray with sum k
+-largets substring with k distinct characters
+-length of largest substring with no repeting characters
+-pick toy
+-minimum window substring
+
+
+//format of sliding window
+
