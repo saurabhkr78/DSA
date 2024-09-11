@@ -18,5 +18,6 @@ for (int i = 0; i < n; i++)
         else
             v.push_back(s.top());
     }
+    s.push_back(arr[i]);
     print vector but dont reverse it;
 }
