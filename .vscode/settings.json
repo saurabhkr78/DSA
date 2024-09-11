@@ -6,11 +6,11 @@
     "new": "cpp",
     "queue": "cpp",
     "vector": "cpp",
-    "valarray": "cpp"
+    "valarray": "cpp",
+    "deque": "cpp",
+    "string": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled",
   "hediet.vscode-drawio.customColorSchemes": [],
-  "hediet.vscode-drawio.colorNames": {
-  
-  }
+  "hediet.vscode-drawio.colorNames": {}
 }
