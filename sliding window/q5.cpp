@@ -16,13 +16,15 @@ In short, the discussed approach will not work with array having negative number
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int n, k;  // `n` is the size of the array, and `k` is the target sum
+int main()
+{
+    int n, k; // `n` is the size of the array, and `k` is the target sum
     cin >> n >> k;
     vector<int> arr(n);
 
     // Input the array elements
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         cin >> arr[i];
     }
 
@@ -30,21 +32,26 @@ int main() {
     int maxi = 0;
 
     // Sliding window algorithm
-    while (j < n) {
-        sum += arr[j];  // Add current element to the window
+    while (j < n)
+    {
+        sum += arr[j]; // Add current element to the window
 
         // When the sum is less than the target, move the right pointer
-        if (sum < k) {
+        if (sum < k)
+        {
             j++;
-        } 
+        }
         // If the sum is equal to the target, calculate the window size
-        else if (sum == k) {
+        else if (sum == k)
+        {
             maxi = max(maxi, j - i + 1);
             j++;
-        } 
+        }
         // When the sum exceeds the target, shrink the window from the left
-        else if (sum > k) {
-            while (sum > k && i <= j) {
+        else if (sum > k)
+        {
+            while (sum > k && i <= j)
+            {
                 sum -= arr[i];
                 i++;
             }
@@ -52,7 +59,7 @@ int main() {
         }
     }
 
-    cout << maxi << endl;  // Output the maximum length of the subarray with sum `k`
+    cout << maxi << endl; // Output the maximum length of the subarray with sum `k`
 
     return 0;
 }

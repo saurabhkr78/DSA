@@ -1,4 +1,10 @@
-// Longest Substring With K Unique Characters
+// Longest Substring With Without Repeating Characters
+// all unique char means window should have all the unique char so all mean window size
+//  map size will be window size
+//  map.size()<(j-i+1) then there is an extra char in window then we start removing char from i side and keep checking untill map.size==window size so code: while(map.size<j-i+1)
+// if equalised then move window
+
+// Longest Substring With all Unique Characters
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -28,21 +34,20 @@ int main()
         // Add the current character to the map and increment its frequency
         m[s[j]]++;
 
-        // If the number of unique characters is less than k, expand the window
-        if (m.size() < k)
-        {
-            j++;
-        }
+        // If the number of unique characters is less than window size is never possible as window size means no of unique chars in map
+        // if (m.size() >j-i+1) {
+        //     j++;
+        // }
         // If the number of unique characters is exactly k
-        else if (m.size() == k)
+        if (m.size() == j - i + 1)
         {
             // Update max_len with the size of the current window
             max_len = max(max_len, j - i + 1);
             j++;
         }
         // If the number of unique characters exceeds k, shrink the window
-        else if (m.size() > k)
-        {
+        else if (m.size() < j - i + 1)
+        {              // mean there is an extra char in window then we start removing char from i side and keep checking untill map.size==window size so code: while(map.size<j-i+1)
             m[s[i]]--; // Reduce the frequency of the character at the start of the window
             if (m[s[i]] == 0)
             {

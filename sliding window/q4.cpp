@@ -51,8 +51,8 @@ int main()
             j++;
         }
     }
-    for(auto it:v)
-    cout<<it<<" ";
+    for (auto it : v)
+        cout << it << " ";
 
     return 0;
 }

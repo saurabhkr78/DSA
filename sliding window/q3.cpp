@@ -60,28 +60,34 @@ int main()
     vector<int> resultIndices; // Vector to store the starting indices of all valid anagram windows
 
     // Traverse the input string using the sliding window approach
-    while (end < str.size()) {
+    while (end < str.size())
+    {
         // Check if the current character at 'end' is in the pattern
-        if (mp.find(str[end]) != mp.end()) {
+        if (mp.find(str[end]) != mp.end())
+        {
             mp[str[end]]--; // Decrease its frequency in the map as it's part of the window
             if (mp[str[end]] == 0)
                 DistinctCharCount--; // If frequency becomes 0, we matched one distinct character
         }
 
         // If the current window size is smaller than the required window size, move 'end' forward
-        if (end - start + 1 < windowSize) {
+        if (end - start + 1 < windowSize)
+        {
             end++;
         }
         // When the window size matches the size of the pattern 'ptr'
-        else if (end - start + 1 == windowSize) {
+        else if (end - start + 1 == windowSize)
+        {
             // If all distinct characters have been matched, it's a valid anagram window
-            if (DistinctCharCount == 0) {
-                noswindow++;                // Increment the count of valid anagram windows
+            if (DistinctCharCount == 0)
+            {
+                noswindow++;                    // Increment the count of valid anagram windows
                 resultIndices.push_back(start); // Store the starting index of this valid window
             }
 
             // Before sliding the window, restore the frequency of the character at the 'start' of the window
-            if (mp.find(str[start]) != mp.end()) {
+            if (mp.find(str[start]) != mp.end())
+            {
                 mp[str[start]]++; // Restore the frequency as the character leaves the window
                 if (mp[str[start]] == 1)
                     DistinctCharCount++; // If its frequency becomes positive, we need this character again
@@ -93,11 +99,11 @@ int main()
         }
     }
 
- 
-    cout << "Number of anagrams found: " << noswindow << endl; 
-    cout << "Starting indices of anagrams: "<<endl;
-    for (int idx : resultIndices) {
-        cout << idx << " "; 
+    cout << "Number of anagrams found: " << noswindow << endl;
+    cout << "Starting indices of anagrams: " << endl;
+    for (int idx : resultIndices)
+    {
+        cout << idx << " ";
     }
     cout << endl;
 
