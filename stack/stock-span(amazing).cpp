@@ -1,6 +1,6 @@
 // find consective samller equal to before it
 // store ngl index
-// push i-ngl index in vector
+// push (i-ngl) index in vector
 
 #include <bits/stdc++.h>
 using namespace std;

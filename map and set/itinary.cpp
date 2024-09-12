@@ -4,7 +4,8 @@ using namespace std;
 int main()
 {
     unordered_map<string, string> m{{"chennai", "bangalore"}, {"bombay", "delhi"}, {"goa", "chennai"}, {"delhi", "goa"}};
-    unordered_map<string, bool> m2;
+    unordered_map<string,string>rev{{"bangalore","chennai"},{"delhi","bombay"},{"chennai","goa"},{"goa","delhi"}};
+    unordered_map<string, bool> m3;
     
     // Traverse through the map to mark sources and destinations
     for (auto it = m.begin(); it != m.end(); ++it) {
@@ -22,14 +23,13 @@ int main()
 
     vector<string> v;
     
-    // Find all the sources (nodes which are marked true in m2)
+    // Find all the sources nodes whichever are marked true in m2
     for (auto it2 = m2.begin(); it2 != m2.end(); ++it2) {
         if (it2->second == true) {
             v.push_back(it2->first);  // Use it2 instead of it
         }
     }
     
-  // Print all destinations corresponding to the sources
     for (const auto& source : v) {
         auto it3 = m.find(source);
         if (it3 != m.end()) {
