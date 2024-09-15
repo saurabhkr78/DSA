@@ -1,0 +1,6 @@
+either given k and smallest or largest in combination.
+if k+smallest than we make max heap and vice-versa
+
+
+when k is given the size of heap will be k
+
