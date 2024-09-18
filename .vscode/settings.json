@@ -8,9 +8,14 @@
     "vector": "cpp",
     "valarray": "cpp",
     "deque": "cpp",
-    "string": "cpp"
+    "string": "cpp",
+    "array": "cpp",
+    "bitset": "cpp",
+    "initializer_list": "cpp",
+    "regex": "cpp",
+    "utility": "cpp"
   },
-  "C_Cpp.errorSquiggles": "disabled",
+  "C_Cpp.errorSquiggles": "enabledIfIncludesResolve",
   "hediet.vscode-drawio.customColorSchemes": [],
   "hediet.vscode-drawio.colorNames": {}
 }

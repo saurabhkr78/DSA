@@ -1,0 +1,4 @@
+#Identification
+1)K+smallest and greatest
+2)top
+if largest greatest and top is being asked then min heap and vice-versa
