@@ -1,28 +1,44 @@
-int exponentialSearch(vector<int>& arr, int key) {
-    int i = 0, j = 1;
+#include<bits/stdc++.h>
+using namespace std;
+class Solution{
+    public:
 
-    // Expand the range exponentially
-    while (j < arr.size() && key > arr[j]) {
-        i = j;
-        j = j * 2;
+
+    int findidx(int arr[],int n,int x){
+        int i=0,j=1;
+        while(j<n && arr[j]<x){
+            i=j;
+            j=j*2;
+        }
+        return bs(arr,i,min(j,n-1),x);
+
     }
 
-    // Ensure j doesn't exceed array size
-    if (j >= arr.size()) {
-        j = arr.size() - 1;
-    }
 
-    // Now perform binary search in the range [i, j]
-    return binarySearch(arr, i, j, key);
-}
 
-// Binary search implementation in range [i, j]
-int binarySearch(vector<int>& arr, int i, int j, int key) {
-    while (i <= j) {
-        int mid = i + (j - i) / 2;
-        if (arr[mid] == key) return mid;
-        else if (arr[mid] < key) i = mid + 1;
-        else j = mid - 1;
+    int bs(int arr[],int i,int j,int x){
+        while(i<=j){
+            int mid = i + (j - i) / 2;
+             if (arr[mid] == x) return mid; 
+             else if (arr[mid] < x) i = mid + 1;
+             else j=mid-1;
+        }
+        return -1;
     }
-    return -1; // If key is not found
+};
+
+int main()
+{
+    Solution sol;
+    int arr[]={1, 3, 7, 15, 18, 21, 30, 35, 40, 45, 50};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int x=21;
+
+    int idx=sol.findidx(arr,n,x);
+    if(idx!=-1)
+        cout<<"element found @"<<idx<<endl;
+    else cout<< "not found"<<endl;
+    
+
+    return 0;
 }
