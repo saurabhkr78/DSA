@@ -9,27 +9,24 @@ int main()
 
     unordered_map<int, int> freq;
     for (int i = 0; i < n; i++) {
-        freq[arr[i]]++; // Count frequencies
+        freq[arr[i]]++;
     }
 
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> minh;
     for (auto it = freq.begin(); it != freq.end(); it++) {
-        minh.push(make_pair(it->second, it->first)); // Push (frequency, element)
+        minh.push(make_pair(it->second, it->first)); // (frequency, element)
         if (minh.size() > k) {
-            minh.pop(); // Maintain heap size to at most k
-        }
+            minh.pop();//to maintain heap size
     }
-
+    }
     vector<int> v;
     while (!minh.empty()) {
-        v.push_back(minh.top().second); // Collect elements
+        v.push_back(minh.top().second); 
         minh.pop();
     }
 
-    // Sort the result vector
     sort(v.begin(), v.end());
 
-    // Print results
     for (auto it : v) {
         cout << it << " " << endl;
     }
