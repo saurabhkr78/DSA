@@ -20,20 +20,24 @@ int partition(int arr[],int si,int ei){
         }
     }
 }
+
+
+
 void quicksort(int arr[],int si,int ei){
     if(si>=ei) return;
     int pivotIndex=partition(arr,si,ei);
     quicksort(arr,0,pivotIndex-1);
     quicksort(arr,pivotIndex+1,ei);
 }
+
+
+
+
 int main(){
     int arr[]={8,4,11,13,2,6,1,9};
     int n=sizeof(arr)/sizeof(arr[0]);
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
-    }
     quicksort(arr,0,n-1);
-    cout<<endl;
+
      for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
