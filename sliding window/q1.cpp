@@ -1,6 +1,4 @@
-#include <vector>
-#include <algorithm> // For std::max
-#include <climits>   // For LLONG_MIN
+#include <bits/stdc++.h>
 using namespace std;
 
 class Solution {
